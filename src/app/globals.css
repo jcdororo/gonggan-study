@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  z-index: 9999;
+}
+
+button {
+  background-color: #998373;
+  color: #fff;
+  font-size: 25px;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+input {
+  background-color: #fff;
+  width: 540px;
+  height: 48px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+/* 다크 모드 */
+body[data-theme="dark"] {
+  @apply bg-[#292929] text-[#fff] border-white z-10;
+}
+
+body[data-theme="dark"] .in {
+  @apply bg-[#292929] z-10;
+}
+
+body[data-theme="dark"] .darkMode {
+  @apply bg-[#292929] text-white;
+}
+
+body[data-theme="dark"] .darkModeFooter {
+  @apply bg-[#272727] text-white z-10;
+}
+
+body[data-theme="dark"] .darkModeMain {
+  @apply bg-[#272727] text-white z-10;
+}
+
+body[data-theme="dark"] .darkModeSurrounding {
+  @apply bg-sygnature-beige text-[#000];
+}
+
+body[data-theme="dark"] .darkModeSearchBar {
+  @apply text-[#000];
+}
+
+body[data-theme="dark"] .darkModeSearchBar input::placeholder {
+  @apply text-[#000];
+}
+
+.in {
+  @apply h-[48px] text-sm p-4 rounded-md border-solid border-gray-300 w-full max-w-[680px];
+}
+
+form .form__block {
+  @apply mt-5 w-full m-auto;
+}
+
+.lab {
+  @apply block font-normal text-sm mt-5 mb-[5px];
+}
+
+form .form__btn--submit {
+  @apply w-full h-[48px] font-bold p-[10px] float-right cursor-pointer my-[30px] mx-auto text-base bg-[#998373] text-white border-transparent;
+}
+
+form .form__btn--submit:hover,
+form .form__btn--submit:focus {
+  @apply bg-[#5f544d];
+}
+
+.infowindow {
+  @apply bg-[#998373] text-white block text-sm text-center h-6 rounded-md px-2 leading-6;
+}
+
+/* 스크롤바의 너비 및 스타일 지정 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* 스크롤바의 색상 지정 */
+::-webkit-scrollbar-thumb {
+  background-color: #998373;
+  border-radius: 6px;
+}
+
+/* 스크롤바의 트랙(배경) 색상 지정 */
+::-webkit-scrollbar-track {
+  background-color: #f4f1ea;
+}
+
+/* 선택된 스크롤바의 모서리 반경 지정 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #998373;
+}
+
+/* 스와이프 슬라이드 투명도  */
+.mySwiper .swiper-slide {
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+/* 스와이프 버튼 */
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 30px !important;
+  font-weight: 600 !important;
+}
+
+/* 메인 페이지 핫한 공간  */
+.fade-in-box {
+  padding: 10px;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
+}
+
+/* 왼쪽에서 나타나게 */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+.img-trans1 {
+  position: relative;
+  animation: fadeInLeft 2s;
+}
+.img-trans2 {
+  position: relative;
+  animation: fadeInLeft 2.5s;
+}
+.img-trans3 {
+  position: relative;
+  animation: fadeInLeft 3s;
+}
+
+.header-icon {
+  background-image: url("/public/logo.png");
+}
+
+/* 모바일 화면 크기에 대한 미디어 쿼리 */
+@media screen and (max-width: 767px) {
+  .header-icon {
+    background-image: url("/public/images/공.png");
+  }
+}
